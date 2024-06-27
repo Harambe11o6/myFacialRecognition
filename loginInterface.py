@@ -3,7 +3,7 @@ from tkinter import messagebox
 import mysql.connector
 import shutil
 import os
-from tkinter import filedialog
+#from tkinter import filedialog
 
 """
 def browseFiles(): #used for giving user an option to slect their imag file.DISCLAIMER:Only to be used when the imag type is a file
@@ -67,7 +67,6 @@ def regwrite():#validating registration details given by the user
     seccon.commit()
     seccon.close()
 def Register():#creating a gui using tkinter
-
     global reg_window
     reg_window=Tk()
     reg_window.title('REGISTER WINDOW')
