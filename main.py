@@ -119,7 +119,7 @@ class FaceRecognition:#attributes of the face recognition
                         shutil.rmtree(file_path)
                 except Exception as e:
                     print('Failed to delete %s. Reason: %s' % (file_path, e))
-            cv2.destroyAllWindows()
+            cv2.destroyAllWindows()#destroying camera window
 if __name__=='__main__':
 
     fr = FaceRecognition()
