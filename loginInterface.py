@@ -5,15 +5,16 @@ import shutil
 import os
 from tkinter import filedialog
 
-
-def browseFiles():
+"""
+def browseFiles(): #used for giving user an option to slect their imag file.DISCLAIMER:Only to be used when the imag type is a file
     filename = filedialog.askopenfilename(initialdir="/",
                                           title="Select a File",
                                           filetypes=(("Text files",
                                                       "*.txt*"),
                                                      ("all files",
                                                       "*.*")))
-def copy_file(source_file, destination_folder):
+"""
+def copy_file(source_file, destination_folder):#function to copy and paste file locations
     # Check if the source file exists
     if not os.path.exists(source_file):
         print(f"Error: The file '{source_file}' does not exist.")
@@ -35,19 +36,6 @@ def copy_file(source_file, destination_folder):
     except Exception as e:
         print(f"Error: Failed to copy file '{filename}' to '{destination_folder}'.")
         print(e)
-
-"""
-def browseFiles():
-    filename = filedialog.askopenfilename(initialdir="/",
-                                          title="Select a File",
-                                          filetypes=(("Text files",
-                                                      "*.txt*"),
-                                                     ("all files",
-                                                      "*.*")))
-"""
-
-
-
 def login():
     global uname
     uname = username.get()
@@ -55,9 +43,9 @@ def login():
     pword = password.get()
     window.destroy()
 
-def regwrite():
+def regwrite():#validating registration details given by the user
     if(new_password.get()!=confirm_password.get()):
-        messagebox.showinfo("Login Status", "new password doesnt match with the confirmed password ")
+        messagebox.showinfo("Login Status", "new date of birth doesnt match with the confirmed date of birth")
     reg_window.destroy()
     global newuname
     global newpword
@@ -67,9 +55,9 @@ def regwrite():
     newpword=new_password.get()
     newemail=new_email.get()
     newfile=new_file.get()
-    newfile=newfile.replace(os.sep, '/')
-    newfile=newfile.strip('"\'')
-    seccon = mysql.connector.connect(host="localhost ", user="root", passwd="SPINteg@123", database="sample")
+    newfile=newfile.replace(os.sep, '/')#is done because databse dont recognise backward slashes
+    newfile=newfile.strip('"\'')#striping the qoutes from the entered file location of the image
+    seccon = mysql.connector.connect(host="localhost ", user="root", passwd="SPINteg@123", database="sample")#connecting to a sample database i MySQL
     if seccon.is_connected() == True:
         print("Successfully connected mysql and python for register")
     else:
@@ -78,7 +66,7 @@ def regwrite():
     cursor1.execute("insert into details values('{}','{}','{}','{}')".format(newuname,newpword,newemail,newfile))
     seccon.commit()
     seccon.close()
-def Register():
+def Register():#creating a gui using tkinter
 
     global reg_window
     reg_window=Tk()
@@ -118,7 +106,7 @@ def Register():
     b1 = Button(reg_window, command=regwrite, text='register_database', font=(14))
     b1.grid(row=5, column=1)
     reg_window.mainloop()
-res=messagebox.askquestion('CREDENTIALS','EXISTING USER OR NOT?')
+res=messagebox.askquestion('CREDENTIALS','EXISTING USER OR NOT?')#confirming whether the user is registered on the database or not
 if res=='no':
     messagebox.showinfo('DIRECTING TO REGISTER PAGE', 'DIRECTING TO REGISTER PAGE')
     Register()
@@ -126,7 +114,7 @@ if res=='no':
 else:
     messagebox.showinfo('DIRECTING TO LOGIN PAGE','directing to login page')
 window = Tk()
-window.title('login Screen')
+window.title('login Screen')#login window
 window.geometry('400x150')
 l1 = Label(window, text='USERNAME:', font=(14))
 l2 = Label(window, text='DATEOFBIRTH:', font=(14))
@@ -141,7 +129,7 @@ t2.grid(row=1, column=1)
 b1 = Button(window, command=login, text='Login', font=(14))
 b1.grid(row=2, column=1)
 window.mainloop()
-mycon = mysql.connector.connect(host="localhost ", user="root", passwd="SPINteg@123", database="sample")#db connection
+mycon = mysql.connector.connect(host="localhost ", user="root", passwd="SPINteg@123", database="sample")#db connection backend implementation done by MySQL
 if (mycon.is_connected() == True):
     print("successfully connected mysql and python")
 else:
@@ -149,7 +137,7 @@ else:
 cursor = mycon.cursor()
 cursor.execute("select name from details where name='{}'".format(uname))
 checkdata=cursor.fetchall()
-if(len(checkdata)==0):
+if(len(checkdata)==0):#if there are no names matching the records then return false
     messagebox.showinfo("Login Status", "Login failed,PLEASE CHECK CREDENTIALS \n ")
     exit()
 else:
@@ -163,9 +151,9 @@ else:
             imgadd += j#saving the address of the image as a string
 
     source_file = imgadd
-    destination_folder = "C:/Users/HP/PycharmProjects/myFacialRecognition/known_people"
+    destination_folder = "C:/Users/HP/PycharmProjects/myFacialRecognition/known_people"#address of a local file(knwon_people) where the image of the employee will be saved and checked in face recognition
     copy_file(source_file, destination_folder)
-mycon.close()
+mycon.close()#closing the db connection
 
 
 
