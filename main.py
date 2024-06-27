@@ -3,14 +3,12 @@ import face_recognition
 import os,sys
 import numpy as np
 import math
-import tkinter as tk
 from tkinter import messagebox
 import loginInterface as li
 import shutil
 import time
 from datetime import datetime
 import csv
-import mysql.connector
 def face_confidence(face_distance,face_match_threshold=0.6):#checking for face tolerance and approximating matching percentage
     range=(1.0-face_match_threshold)
     linear_val=(1.0-face_distance)/(range*2.0)

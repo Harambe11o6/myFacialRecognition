@@ -3,7 +3,7 @@ from tkinter import messagebox
 import mysql.connector
 import shutil
 import os
-#from tkinter import filedialog
+#from tkinter import filedialog #use this only in case of use browseFiles() function
 
 """
 def browseFiles(): #used for giving user an option to slect their imag file.DISCLAIMER:Only to be used when the imag type is a file
