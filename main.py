@@ -73,7 +73,7 @@ class FaceRecognition:#attributes of the face recognition
                                 employees.remove(name)
                                 print(employees)
                                 current_time = now.strftime("%H-%M-%S")
-                                lnwriter.writerow([name, current_time])#writing the name of the employee and time he logged in
+                                lnwriter.writerow([li.uname, current_time])#writing the name of the employee and time he logged in
                         folder = 'known_people'
                         for filename in os.listdir(folder):#deleting employee face form the known_people folder after the matching is complete
                             file_path = os.path.join(folder, filename)
