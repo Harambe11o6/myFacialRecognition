@@ -440,7 +440,7 @@ else:
 cursor = mycon.cursor()
 cursor.execute("select name from details where name='{}'".format(uname))
 checkdata=cursor.fetchall()
-if(len(checkdata)==0):#if there are no names matching the records then return false
+if(len(checkdata)==0):#if there are no names matching the records then return False
     messagebox.showinfo("Login Status", "Login failed,PLEASE CHECK CREDENTIALS \n ")
     exit()
 else:
