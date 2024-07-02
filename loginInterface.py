@@ -375,7 +375,7 @@ class RegPage:
 def regwrite():#validating registration details given by the user
     if(new_password.get()!=confirm_password.get()):
         messagebox.showinfo("Login Status", "new date of birth doesnt match with the confirmed date of birth")
-    window.destroy()
+    reg_window.destroy()
     global newuname
     global newpword
     global newemail
@@ -449,8 +449,3 @@ else:
     destination_folder = "C:/Users/HP/PycharmProjects/myFacialRecognition/known_people"#address of a local file(knwon_people) where the image of the employee will be saved and checked in face recognition
     copy_file(source_file, destination_folder)
 mycon.close()#closing the db connection
-
-
-
-
-
