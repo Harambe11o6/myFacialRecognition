@@ -4,6 +4,8 @@ import mysql.connector
 import shutil
 import os
 from PIL import ImageTk, Image
+import sys
+
 #from tkinter import filedialog #use this only in case of use browseFiles() function
 
 """
@@ -137,16 +139,6 @@ class LoginPage:
                                     activebackground="#040405"
                                     , borderwidth=0, background="#040405", cursor="hand2")
         self.forgot_button.place(x=630, y=510)
-        # =========== Sign Up ==================================================
-        self.sign_label = Label(self.lgn_frame, text='No account yet?', font=("yu gothic ui", 11, "bold"),
-                                relief=FLAT, borderwidth=0, background="#040405", fg='white')
-        self.sign_label.place(x=550, y=560)
-
-        self.signup_img = ImageTk.PhotoImage(file='images\\register.png')
-        self.signup_button_label = Button(self.lgn_frame, image=self.signup_img, bg='#98a65d', cursor="hand2",
-                                          borderwidth=0, background="#040405", activebackground="#040405")
-        self.signup_button_label.place(x=670, y=555, width=111, height=35)
-
         # ========================================================================
         # ============================password====================================
         # ========================================================================
@@ -404,8 +396,8 @@ def regwrite():#validating registration details given by the user
     seccon.commit()
     seccon.close()
 def Register():#creating a gui using tkinter
-    global window
-    window = Tk()
+    global reg_window
+    reg_window = Tk()
     global new_username
     global new_password
     global confirm_password
@@ -416,8 +408,8 @@ def Register():#creating a gui using tkinter
     confirm_password = StringVar()
     new_email = StringVar()
     new_file = StringVar()
-    RegPage(window)
-    window.mainloop()
+    RegPage(reg_window)
+    reg_window.mainloop()
 res=messagebox.askquestion('CREDENTIALS','EXISTING USER OR NOT?')#confirming whether the user is registered on the database or not
 if res=='no':
     messagebox.showinfo('DIRECTING TO REGISTER PAGE', 'DIRECTING TO REGISTER PAGE')
