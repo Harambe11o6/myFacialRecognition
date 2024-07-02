@@ -438,7 +438,7 @@ if (mycon.is_connected() == True):
 else:
     print("connection failed")
 cursor = mycon.cursor()
-cursor.execute("select name from details where name='{}'".format(uname))
+cursor.execute("select name from details where name='{}' and DOB='{}'".format(uname,pword))
 checkdata=cursor.fetchall()
 if(len(checkdata)==0):#if there are no names matching the records then return False
     messagebox.showinfo("Login Status", "Login failed,PLEASE CHECK CREDENTIALS \n ")
