@@ -1,15 +1,14 @@
 #FACE RECOGNITION WITH ATTENDENCE SYSTEM:
-This is an attempt at an api for a login software and attendence system to keep a log of the users who are using the api.This has been implemented by using python for the machine learning part of the program,
-tkinter was used for the graphical use interface and MySQL was use for the bakend part of the project. 
-#REQUIREMENTS:
--Packages(for main.py):
-  ~open cv
-  ~face recognition
-  ~os
-  ~sys
-  ~numpy
-  ~math
-  ~tkinter
+This is an attempt at an api for a login software and attendence system to keep a log of the users who are using the api.This has been implemented by using python for the machine learning part of the program,tkinter was used for the graphical use interface and MySQL was use for the bakend part of the project<br/>
+#REQUIREMENTS:<br/>
+-Packages(for main.py):<br/>
+  ~open cv<br/>
+  ~face recognition<br/>
+  ~os<br/>
+  ~sys<br/>
+  ~numpy<br/>
+  ~math<br/>
+  ~tkinter<br/>
   ~shutil
   ~time
   ~datetime
