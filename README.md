@@ -9,22 +9,22 @@ This is an attempt at an api for a login software and attendence system to keep 
   ~numpy<br/>
   ~math<br/>
   ~tkinter<br/>
-  ~shutil
-  ~time
-  ~datetime
-  ~csv
--Packages(for logininterface.py):
-  ~tkinter
-  ~from tkinter import messagebox
-  ~mysql.connector
-  ~shutil
-  ~os
-  ~pillow
--Workspace:
-  ~preferably vs code or pycharm
-  ~download the images folder available in the git hub repo and copy it to the local file workspace
-  ~create a folder as known_people to store the  pictures of the people to be checked with the live camera capture
-  ~install MySQL and connect it with your python workspace
-#CONFIGURATION:
--webcam or any external camera to capture 
--a basic laptop/desktop with has python idle installed
+  ~shutil<br/>
+  ~time<br/>
+  ~datetime<br/>
+  ~csv<br/>
+-Packages(for logininterface.py):<br/>
+  ~tkinter<br/>
+  ~from tkinter import messagebox<br/>
+  ~mysql.connector<br/>
+  ~shutil<br/>
+  ~os<br/>
+  ~pillow<br/>
+-Workspace:<br/>
+  ~preferably vs code or pycharm<br/>
+  ~download the images folder available in the git hub repo and copy it to the local file workspace<br/>
+  ~create a folder as known_people to store the  pictures of the people to be checked with the live camera capture<br/>
+  ~install MySQL and connect it with your python workspace<br/>
+#CONFIGURATION:<br/>
+-webcam or any external camera to capture <br/>
+-a basic laptop/desktop with has python idle installed<br/>
