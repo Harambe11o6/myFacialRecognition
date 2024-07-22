@@ -131,6 +131,7 @@ class LoginPage:
         self.login = Button(self.lgn_button_label,command=login, text='LOGIN', font=("yu gothic ui", 13, "bold"), width=25, bd=0,
                             bg='#3047ff', cursor='hand2', activebackground='#3047ff', fg='white')
         self.login.place(x=20, y=10)
+        """
         # ========================================================================
         # ============================Forgot password=============================
         # ========================================================================
@@ -139,6 +140,7 @@ class LoginPage:
                                     activebackground="#040405"
                                     , borderwidth=0, background="#040405", cursor="hand2")
         self.forgot_button.place(x=630, y=510)
+        """
         # ========================================================================
         # ============================password====================================
         # ========================================================================
