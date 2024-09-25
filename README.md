@@ -27,4 +27,4 @@ This is an attempt at an api for a login software and attendence system to keep 
   ~install MySQL and connect it with your python workspace<br/>
 #CONFIGURATION:<br/>
 -webcam or any external camera to capture <br/>
--a basic laptop/desktop with has python idle installed<br/>
+-a basic laptop/desktop which has python idle installed<br/>
